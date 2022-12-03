@@ -5,5 +5,5 @@ First go and create your own account ~ https://adventofcode.com/2022
 Share your code in a folder according to the below format :
 
 1.Folder name(Day no)
- 1.your code
- 2.your input file
+2.your code
+3.your input file
