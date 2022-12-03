@@ -14,6 +14,7 @@ class Solution {
     int loss = 0;
 
     int score = 0;
+    int new_score = 0;
 
     Map<String,Integer> map = new HashMap<>();
     map.put("A",rock);
@@ -48,9 +49,44 @@ class Solution {
             score += loss;
         }
         score+=map.get(chances[1]);
+
+        if(map.get(chances[1])==rock){
+            if(map.get(chances[0])==rock){
+                new_score += scissor + loss;
+            }
+            else if(map.get(chances[0])==scissor){
+                new_score += paper + loss;
+            }
+            else{
+                new_score+= rock + loss;
+            }
+        }
+        else if(map.get(chances[1])==paper){
+               if(map.get(chances[0])==rock){
+                new_score+=rock+draw;
+               }
+               else if(map.get(chances[0])==paper){
+                new_score+=paper+draw;
+               }
+               else{
+                new_score += scissor+draw;
+               } 
+        }
+        else{
+            if(map.get(chances[0])==rock){
+                new_score+=paper+win;
+            }
+            else if(map.get(chances[0])==paper){
+                new_score+=scissor+win;
+            }
+            else{
+                new_score+=rock+win;
+            }
+        }
     }
 
     System.out.println(score);
+    System.out.println(new_score);
 
     }
 }
