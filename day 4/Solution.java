@@ -33,9 +33,17 @@ class Solution{
             int x2 = Integer.parseInt(b[0]);
             int y2 = Integer.parseInt(b[1]);
 
-            if(x1<=x2 && y2<=y1 || x2<=x1 && y1<=y2){
-                score += 1;
-            }
+            //puzzl1
+
+           if(x1<=x2 && y2<=y1 || x2<=x1 && y1<=y2){
+            score += 1;
+           }
+
+           //puzzle2
+
+           if(!(y1<x2 || y2<x1)){
+            score += 1;
+           }
         }
 
         System.out.println(score);
